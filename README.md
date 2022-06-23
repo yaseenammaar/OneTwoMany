@@ -1,31 +1,43 @@
-# OneTwoMany Staking Protocol
+# Freedom Of Speech
 
-## Say major +1 to your NFT's Utilities!
+Freedom of Speech is a simple Decentralized Web App developed with Solidity and React, currently in testing stage.
 
-![OTM](http://stwpd.me/otm/static/media/Stake.7feae79f3388148a9473.gif)
+## Visit https://freedomofspeech.lol
+
+Freedom Of Speech: Giving right to speak, One person at a time!
+
+# First Law of Metaverse | Speak & Get Paid to Shut Up
+
+## Note: It is not destined to act like a ad board, where anyone can put marketing stuff and let other people watch.
+
+Main idea of this project is to provide freedom of speech in a different manner. As we know Elon Musk bought twitter and said he will allow freedom of speech, that's alright but there is no monetary benefit to user.
+
+![alt text](./screencapture-freedomofspeech-lol-2022-06-16-20_28_41.png)
 
 
-OneTwoMany is an ethereum-based staking protocol, where user can stake their digital asset like NFTs and token in order to challenge other holders. They both need to lock their asset into smartcontract and winner will take locked assets.
+FreedomOfSpeech.lol allows one person at a time to display any URL, currently supporting PNG, JPG and GIF. (will add YouTube videos and other options later)
 
-![OTM](http://stwpd.me/otm/static/media/OTM.a5a594bf362e8ca537aa.gif)
 
-# P2M Gaming
+### Working: Each time a user changes the URL the price of next bid increases by 20% and the previous user gets his capital back with fraction of profit.
 
-P2M Gaming, Stands for "Play to Multiply gaming", Unlike Play to Earn gaming where you earn cryptocurrency for playing blockchain based games. In P2M gaming you need to have atleast one digital asset and to send challenges to other players. This protocol is not just limited to games it can also be used as agreement on blockchain.
+For example: If someone changed URL for 1 ETH then he/she will get 1.10 ETH or more, if his content get replaced. (We calculated, user will not be in loss if wheel keeps on running!)
 
-![OTM](http://stwpd.me/otm/static/media/con.86cb100e8666d0e4c9f9.gif)
+# Prerequisite
 
-# Multi-Staking for NFT
+1. Metamask wallet with some Ether (currently it's on Ropsten Testnet, so you can request test faucet from https://faucet.egorfine.com/)
+2. Visit https://freedomofspeech.lol
+3. Scroll down to the bottom
+4. Enter URL of any PNG/JPG/GIF
+5. Hit "Change"
+6. Wait for transaction 
+7. Done! You will get to see your content on the site.
 
-![OTM](http://stwpd.me/otm/static/media/Stake_1.7f4d3515d5cac19f5c1b.gif)
 
-# Team Staking - Coming soon
+# Status
+Currently FreedomOfSpeech.lol is deployed on Ropsten Test Network, you can use Ropsten Faucet to test the app. Will deploy it to ETH mainnet soon.
 
-# Our first client
+Powered by Ethereum Ξ
 
-![OTM](http://stwpd.me/otm/static/media/gotballs.8fcef9c35ecef4af114a.png)
+![alt text](./1500x500.jpeg)
 
-# Integration - Coming Soon
-
-![OTM](http://stwpd.me/otm/static/media/dev.950988fe9f0bc195aa54.gif)
-
+Kindly support, Gas is too expensive.
