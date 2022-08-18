@@ -14,10 +14,12 @@ import { usePopper } from "react-popper";
 import stake from "./Stake.gif";
 import stake1 from "./Stake_1.gif";
 import pp from "./dev.gif";
+import BuyMoreModal from "./BuyMoreModal";
 
 export default function App() {
   const [showAbout, setShowAbout] = useState(false);
   const [showWorking, setShowWorking] = useState(false);
+  const [showBuyModal, setShowBuyModal] = useState(false);
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -55,15 +57,21 @@ export default function App() {
                 {...menuAttributes.popper}
                 className="absolute z-10"
               >
-                <div className="grid grid-cols-1 mt-2 border border-gray-300 rounded-lg p-2 mr-4 bg-white ">
+                <div className="grid grid-cols-1 mt-2 border border-gray-300 rounded-lg p-1 mr-4 bg-white ">
                   <button
-                    class="py-1 px-2 rounded-md text-gray-700 hover:bg-gray-100"
+                    class="py-1 text-left px-2 rounded-md text-gray-700 hover:bg-gray-100"
+                    onClick={() => setShowBuyModal(true)}
+                  >
+                    Buy Many
+                  </button>
+                  <button
+                    class="py-1 text-left px-2 rounded-md text-gray-700 hover:bg-gray-100"
                     onClick={() => setShowAbout(!showAbout)}
                   >
                     Documentation
                   </button>
                   <button
-                    class="py-1 px-2 rounded-md text-gray-700 hover:bg-gray-100"
+                    class="py-1 text-left px-2 rounded-md text-gray-700 hover:bg-gray-100"
                     onClick={() => setShowAbout(!showAbout)}
                   >
                     How this works?
@@ -75,6 +83,23 @@ export default function App() {
             </div>
 
             <Popover.Group as="nav" className="hidden md:flex space-x-10">
+              <Popover className="relative">
+                {({ open }) => (
+                  <>
+                    <Popover.Button
+                      className={classNames(
+                        open ? "text-gray-900" : "text-gray-500",
+                        "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 "
+                      )}
+                    >
+                      <span onClick={() => setShowBuyModal(true)}>
+                        Buy Many
+                      </span>
+                    </Popover.Button>
+                  </>
+                )}
+              </Popover>
+
               <Popover className="relative">
                 {({ open }) => (
                   <>
@@ -115,6 +140,8 @@ export default function App() {
 
       {/* <p>Your balance is {URL}</p> */}
       {/* <button onClick={() => fetchURL()}>Refresh balance</button> */}
+
+      <BuyMoreModal visible={showBuyModal} onClose={() => setShowBuyModal(false)}  />
 
       <br />
       <Popup visible={showAbout} close={() => setShowAbout(false)} />
