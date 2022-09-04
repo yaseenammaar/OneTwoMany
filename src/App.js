@@ -17,6 +17,7 @@ import con from "./assets/config.gif";
 import stake from "./Stake.gif";
 import stake1 from "./Stake_1.gif";
 import pp from "./dev.gif";
+import BuyMoreModal from "./BuyMoreModal";
 
 import * as SolanaWeb3 from '@solana/web3.js';
 import bs58 from "bs58"
@@ -33,6 +34,7 @@ import bs58 from "bs58"
 export default function App() {
   const [showAbout, setShowAbout] = useState(false);
   const [showWorking, setShowWorking] = useState(false);
+  const [showBuyModal, setShowBuyModal] = useState(false);
 
 
   async function sendTokenToOwnerWallet(){
@@ -94,79 +96,117 @@ export default function App() {
 
   return (
     <>
-      <Popover className="relative bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
-              
-              <img
-                className="h-32 w-auto sm:h-10"
-                src={logo}
-                alt=""
-              />
-            </a>
+      <Popover as="nav" className="relative bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+            <div className="flex justify-start lg:w-0 lg:flex-1">
+              <a href="#">
+                <img className="h-8 w-auto sm:h-10" src={logo} alt="" />
+              </a>
+            </div>
+            <div className="-mr-2 -my-2 md:hidden">
+              <Popover.Button
+                ref={setMenuReferenceElement}
+                className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              >
+                <span className="sr-only">Open menu</span>
+                <MenuIcon className="h-6 w-6" aria-hidden="true" />
+              </Popover.Button>
+
+              <Popover.Panel
+                ref={setMenuPopperElement}
+                style={menuStyles.popper}
+                {...menuAttributes.popper}
+                className="absolute z-10"
+              >
+                <div className="grid grid-cols-1 mt-2 border border-gray-300 rounded-lg p-1 mr-4 bg-white ">
+                  <button
+                    class="py-1 text-left px-2 rounded-md text-gray-700 hover:bg-gray-100"
+                    onClick={() => setShowBuyModal(true)}
+                  >
+                    Buy Many
+                  </button>
+                  <button
+                    class="py-1 text-left px-2 rounded-md text-gray-700 hover:bg-gray-100"
+                    onClick={() => setShowAbout(!showAbout)}
+                  >
+                    Documentation
+                  </button>
+                  <button
+                    class="py-1 text-left px-2 rounded-md text-gray-700 hover:bg-gray-100"
+                    onClick={() => setShowAbout(!showAbout)}
+                  >
+                    How this works?
+                  </button>
+                </div>
+
+                <img src="/solutions.jpg" alt="" />
+              </Popover.Panel>
+            </div>
+
+            <Popover.Group as="nav" className="hidden md:flex space-x-10">
+              <Popover className="relative">
+                {({ open }) => (
+                  <>
+                    <Popover.Button
+                      className={classNames(
+                        open ? "text-gray-900" : "text-gray-500",
+                        "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 "
+                      )}
+                    >
+                      <span onClick={() => setShowBuyModal(true)}>
+                        Buy Many
+                      </span>
+                    </Popover.Button>
+                  </>
+                )}
+              </Popover>
+
+              <Popover className="relative">
+                {({ open }) => (
+                  <>
+                    <Popover.Button
+                      className={classNames(
+                        open ? "text-gray-900" : "text-gray-500",
+                        "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 "
+                      )}
+                    >
+                      <span onClick={() => setShowAbout(!showAbout)}>
+                        Documentation
+                      </span>
+                    </Popover.Button>
+                  </>
+                )}
+              </Popover>
+
+              <Popover className="relative">
+                {({ open }) => (
+                  <>
+                    <Popover.Button
+                      className={classNames(
+                        open ? "text-gray-900" : "text-gray-500",
+                        "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 "
+                      )}
+                    >
+                      <span onClick={() => setShowAbout(!showAbout)}>
+                        How this works?
+                      </span>
+                    </Popover.Button>
+                  </>
+                )}
+              </Popover>
+            </Popover.Group>
           </div>
-          <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-              <span className="sr-only">Open menu</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
-            </Popover.Button>
-          </div>
-          <Popover.Group as="nav" className="hidden md:flex space-x-10">
+        </div>
+      </Popover>
 
-          <Popover className="relative">
-              {({ open }) => (
-                <>
-                  <Popover.Button
-                    className={classNames(
-                      open ? 'text-gray-900' : 'text-gray-500',
-                      'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 '
-                    )}
-                  >
-                    <span onClick={() => setShowAbout(!showAbout)}>Documentation</span>
-                    
-                  </Popover.Button>
+      {/* <p>Your balance is {URL}</p> */}
+      {/* <button onClick={() => fetchURL()}>Refresh balance</button> */}
 
-                </>
-              )}
-            </Popover>
+      <BuyMoreModal visible={showBuyModal} onClose={() => setShowBuyModal(false)}  />
 
-
-            <Popover className="relative">
-              {({ open }) => (
-                <>
-                  <Popover.Button
-                    className={classNames(
-                      open ? 'text-gray-900' : 'text-gray-500',
-                      'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 '
-                    )}
-                  >
-                    <span onClick={() => setShowAbout(!showAbout)}>How this works?</span>
-                    
-                  </Popover.Button>
-
-                </>
-              )}
-            </Popover>
-
-            <Popover className="relative">
-          
-                <>
-                  <Popover.Button
-                    className={classNames(
-                     'text-gray-500',
-                      'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 '
-                    )}
-                  >
-                    <span>Buy $MANY</span>
-                    
-                  </Popover.Button>
-
-                </>
-         
-            </Popover>
-
+      <br />
+      <Popup visible={showAbout} close={() => setShowAbout(false)} />
           </Popover.Group>
         
         </div>
