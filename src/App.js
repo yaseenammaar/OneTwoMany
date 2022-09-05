@@ -153,15 +153,18 @@ export default function App() {
             <Popover className="relative">
           
                 <>
+               
                   <Popover.Button
+                    onClick={() => window.open("https://discord.gg/JB9xd9dzfD", '_blank', 'noopener,noreferrer')}
                     className={classNames(
                      'text-gray-500',
                       'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 '
                     )}
                   >
-                    <span>Buy $MANY</span>
+                    <span>Discord</span>
                     
                   </Popover.Button>
+                 
 
                 </>
          
@@ -183,7 +186,7 @@ export default function App() {
     <section className="px-3 sm:px-12 md:px-28  ">
       <center>
       <h2 class="font-medium leading-tight mt-0 mb-2 text-4xl text-gray-600">
-            Introducing OneTwoMany!
+            Introducing OneTwoMany Protocol!
         </h2>
 
 
@@ -199,7 +202,7 @@ export default function App() {
             
             <br/>
             <h2 class="font-medium leading-tight mt-0 mb-2 text-3xl text-gray-600">
-            What is OneTwoMany & P2M Gaming?
+            What is OneTwoMany Protocol & P2M Gaming?
         </h2>
         <br/>
         </center>
@@ -211,10 +214,10 @@ export default function App() {
           <br/><br/><br/><br/>
         <center>
           <h2 class="font-medium leading-tight mt-0 mb-2 text-2xl text-gray-600">
-            OneTwoMany Staking Protocol
+            OneTwoMany Protocol
           </h2>
           <h4 class="font-medium leading-tight mt-0 mb-2 text-gray-600">
-            OneTwoMany is an ethereum-based staking protocol, where user can stake their digital asset like NFTs and tokens in order to challenge other holders. They need to lock their asset into smartcontract and the winner will take locked assets.
+            OneTwoMany is a staking protocol, where user can stake their digital asset like NFTs and tokens in order to challenge other holders. They need to lock their asset into smartcontract and the winner will take locked assets.
           </h4>
           </center>
         </section>

@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "./static/css/main.e2edee1c.css",
+    "main.js": "./static/js/main.9216234d.js",
+    "static/js/787.a9169c5b.chunk.js": "./static/js/787.a9169c5b.chunk.js",
+    "static/media/Stake_1.gif": "./static/media/Stake_1.7f4d3515d5cac19f5c1b.gif",
+    "static/media/dev.gif": "./static/media/dev.950988fe9f0bc195aa54.gif",
+    "static/media/OTM.gif": "./static/media/OTM.a5a594bf362e8ca537aa.gif",
+    "static/media/config.gif": "./static/media/config.86cb100e8666d0e4c9f9.gif",
+    "static/media/Stake.gif": "./static/media/Stake.7feae79f3388148a9473.gif",
+    "static/media/gotballs.png": "./static/media/gotballs.8fcef9c35ecef4af114a.png",
+    "static/media/logo.png": "./static/media/logo.95610a4f5390577822eb.png",
+    "static/media/founder.jpeg": "./static/media/founder.77c655f5eae22b29fce1.jpeg",
+    "index.html": "./index.html",
+    "main.e2edee1c.css.map": "./static/css/main.e2edee1c.css.map",
+    "main.9216234d.js.map": "./static/js/main.9216234d.js.map",
+    "787.a9169c5b.chunk.js.map": "./static/js/787.a9169c5b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2edee1c.css",
+    "static/js/main.9216234d.js"
+  ]
+}
