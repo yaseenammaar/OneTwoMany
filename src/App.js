@@ -281,18 +281,6 @@ export default function App() {
             <br/>
             
             
-      <h1 class="font-medium leading-tight text-3xl mt-0 mb-2 text-gray-600">Our First Client: GotBalls?</h1>
-        </center>
-            <br/>
-            
-            <section className="text-center px-3 sm:px-12 md:px-28 ">
-              <div className="rounded-xl shadow-xl shadow-gray-300 overflow-hidden ">
-                <img class="w-full" src={gotballs} />
-              </div>
-            </section>
-            
-            
-            <br/><br/>
             
             <section className="px-3 sm:px-12 md:px-28 ">
       <center className="border-b-2">
